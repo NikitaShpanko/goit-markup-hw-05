@@ -6,6 +6,9 @@
   --background-medium: #f5f4fa;
   --background-dark: #2f303a;
   --svg-link-color: #afb1b8;
+
+  /* --trans-dur: 250ms;
+  --trans-tim-func: cubic-bezier(0.4, 0, 0.2, 1); */
 }
 
 h1,
@@ -144,8 +147,10 @@ body {
 
 /* Класс highlight работает только, если описан ниже классов, к которым применяется. 
    Как бы его хитрее решить-то? */
-.current,
-.highlight,
+.highlight {
+  color: var(--highlight-color);
+}
+
 .navigation-link:hover,
 .navigation-link:focus,
 .header-contact-link:hover,
@@ -455,4 +460,43 @@ body {
 .link-in-footer {
   background: rgba(255, 255, 255, 0.1);
   fill: var(--background-light);
+}
+
+/* ====== ANIMATION ====== */
+.navigation-link,
+.header-contact-link,
+.footer-contact-link,
+.order-button,
+.filter-button,
+.social-link,
+.client-link,
+.portfolio-link {
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navigation-link,
+.header-contact-link,
+.footer-contact-link {
+  transition-property: color;
+}
+
+.order-button {
+  transition-property: color, background-color;
+}
+
+.filter-button {
+  transition-property: color, background-color, box-shadow;
+}
+
+.social-link {
+  transition-property: background-color, fill;
+}
+.client-link {
+  transition-property: border-color, fill;
+}
+
+.portfolio-link {
+  transition-property: box-shadow;
 }
