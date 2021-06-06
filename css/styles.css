@@ -7,8 +7,8 @@
   --background-dark: #2f303a;
   --svg-link-color: #afb1b8;
 
-  /* --trans-dur: 250ms;
-  --trans-tim-func: cubic-bezier(0.4, 0, 0.2, 1); */
+  --trans-dur: 250ms;
+  --trans-func: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 h1,
@@ -160,6 +160,12 @@ body {
   color: var(--highlight-color);
 }
 
+.navigation-link,
+.header-contact-link,
+.footer-contact-link {
+  transition: color var(--trans-dur) var(--trans-func);
+}
+
 .hero {
   background-image: linear-gradient(
       rgba(47, 48, 58, 0.4),
@@ -204,11 +210,19 @@ body {
   line-height: 1.875em;
   padding: 10px 32px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+
+  transition-property: color, background-color;
+  transition-duration: var(--trans-dur);
+  transition-timing-function: var(--trans-func);
 }
 
 .filter-button {
   line-height: 1.625em;
   padding: 6px 22px;
+
+  transition-property: color, background-color, box-shadow;
+  transition-duration: var(--trans-dur);
+  transition-timing-function: var(--trans-func);
 }
 
 .order-button,
@@ -344,6 +358,10 @@ body {
   padding: 12px;
   border-radius: 50%;
   fill: var(--svg-link-color);
+
+  transition-property: background-color, fill;
+  transition-duration: var(--trans-dur);
+  transition-timing-function: var(--trans-func);
 }
 
 .social-link:hover,
@@ -366,10 +384,14 @@ body {
   justify-content: center;
   width: 170px;
   height: 92px;
-  /* padding: 16px 32px; */
+
   border: 1px solid var(--svg-link-color);
   border-radius: 4px;
   fill: var(--svg-link-color);
+
+  transition-property: border-color, fill;
+  transition-duration: var(--trans-dur);
+  transition-timing-function: var(--trans-func);
 }
 
 .client-link:hover,
@@ -424,6 +446,8 @@ body {
   letter-spacing: 0.03em;
   color: var(--background-light);
   background-color: rgba(33, 150, 243, 0.9);
+
+  transition: transform var(--trans-dur) var(--trans-func);
 }
 
 .portfolio-overlay:hover .portfolio-overlay-text {
@@ -432,6 +456,8 @@ body {
 
 .portfolio-link {
   display: block;
+
+  transition: box-shadow var(--trans-dur) var(--trans-func);
 }
 
 .portfolio-link:hover,
@@ -555,48 +581,4 @@ body {
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
   box-shadow: none;
-}
-
-/* ====== ANIMATION ====== */
-.navigation-link,
-.header-contact-link,
-.footer-contact-link,
-.order-button,
-.filter-button,
-.social-link,
-.client-link,
-.portfolio-link,
-.portfolio-overlay-text {
-  transition-property: color;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.navigation-link,
-.header-contact-link,
-.footer-contact-link {
-  transition-property: color;
-}
-
-.order-button {
-  transition-property: color, background-color;
-}
-
-.filter-button {
-  transition-property: color, background-color, box-shadow;
-}
-
-.social-link {
-  transition-property: background-color, fill;
-}
-.client-link {
-  transition-property: border-color, fill;
-}
-
-.portfolio-link {
-  transition-property: box-shadow;
-}
-
-.portfolio-overlay-text {
-  transition-property: transform;
 }
