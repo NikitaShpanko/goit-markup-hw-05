@@ -399,6 +399,35 @@ body {
   margin-left: 8px;
 }
 
+.portfolio-overlay {
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio-overlay-text {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  padding-left: 24px;
+  padding-right: 24px;
+
+  font-size: 18px;
+  line-height: 1.556;
+  letter-spacing: 0.03em;
+  color: var(--background-light);
+  background-color: rgba(33, 150, 243, 0.9);
+}
+
+.portfolio-overlay:hover .portfolio-overlay-text {
+  top: 0;
+}
+
 .portfolio-link {
   display: block;
 }
@@ -492,7 +521,8 @@ body {
 .filter-button,
 .social-link,
 .client-link,
-.portfolio-link {
+.portfolio-link,
+.portfolio-overlay-text {
   transition-property: color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -521,4 +551,8 @@ body {
 
 .portfolio-link {
   transition-property: box-shadow;
+}
+
+.portfolio-overlay-text {
+  transition-property: top;
 }
