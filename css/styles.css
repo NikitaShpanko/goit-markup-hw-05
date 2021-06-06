@@ -406,10 +406,12 @@ body {
 
 .portfolio-overlay-text {
   position: absolute;
-  top: 100%;
+  top: 0;
   left: 0;
   right: 0;
   height: 100%;
+
+  transform: translateY(100%);
 
   display: flex;
   align-items: center;
@@ -425,7 +427,7 @@ body {
 }
 
 .portfolio-overlay:hover .portfolio-overlay-text {
-  top: 0;
+  transform: translateY(0);
 }
 
 .portfolio-link {
@@ -596,5 +598,5 @@ body {
 }
 
 .portfolio-overlay-text {
-  transition-property: top;
+  transition-property: transform;
 }
