@@ -450,7 +450,8 @@ body {
   transition: transform var(--trans-dur) var(--trans-func);
 }
 
-.portfolio-overlay:hover .portfolio-overlay-text {
+.portfolio-link:hover .portfolio-overlay-text,
+.portfolio-link:focus .portfolio-overlay-text {
   transform: translateY(0);
 }
 
